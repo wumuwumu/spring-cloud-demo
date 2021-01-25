@@ -1,4 +1,4 @@
-package cn.overhill.springclouddemo;
+package cn.overhill.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,0 +1,22 @@
+server:
+  port: 8766
+
+spring:
+  application:
+    name: demo-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: redirect-blog
+          uri: https://wumuwumu.github.io
+          predicates:
+            - Path=/archives/**
+          filters:
+            - StripPrefix=1
+            - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+        - id: service-client #服务唯一ID标识
+          uri: lb://service-client # 注册中心的服务id
+          predicates:
+            - Path=/client/** #请求转发
+          filters:
+            - StripPrefix=1 #切割请求，去除/client/
