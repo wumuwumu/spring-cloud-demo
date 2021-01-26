@@ -27,6 +27,12 @@ public class GatewayConfig {
     @Bean
     RouteLocator routeLocator(RouteLocatorBuilder routeLocatorBuilder){
         return routeLocatorBuilder.routes().route("12",predicateSpec -> {
+            /**
+             * route：
+             * 参数一类似与数据库主键，非重复得标识位
+             * 参数二对应断言得请求路径，可以有多个
+             * 参数三对应断言结果，如果为true则跳转映射uri中
+             */
             return predicateSpec.path("/demo")
                     .and().after(ZonedDateTime.now())
                     .and().asyncPredicate(tokenRoutePredicateFactory.applyAsync(config -> config.setHeaderName("token")))
