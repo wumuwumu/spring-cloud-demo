@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping(value = "hello")
-    public ResponseEntity<String> say(){
+    public ResponseEntity<String> say() {
         return ResponseEntity.ok("hello word gateway");
     }
 
 
-        @GetMapping("/fallback")
-        public String fallback() {
-            return "fallback";
-        }
+    @GetMapping("/fallback")
+    public String fallback() {
+        return "fallback";
+    }
 
 }
