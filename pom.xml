@@ -23,7 +23,9 @@
     <modules>
         <module>demo-gateway</module>
         <module>demo-user</module>
-        <module>demo-start-redis</module>
+        <module>demo-starter-redis</module>
+        <module>demo-swagger-knife4j</module>
+        <module>demo-swagger</module>
     </modules>
 
     <dependencies>

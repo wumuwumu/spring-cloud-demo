@@ -38,7 +38,7 @@ public class FilterController implements InitializingBean {
         PredicateDefinition predicateDefinition = new PredicateDefinition();
         predicateDefinition.setName("Path");
         Map<String, String> predicateParams = new HashMap<>(8);
-        predicateParams.put("path", "/archives/**");
+        predicateParams.put("path", "/user/**");
         predicateDefinition.setArgs(predicateParams);
         FilterDefinition filterDefinition = new FilterDefinition();
         filterDefinition.setName("StripPrefix");

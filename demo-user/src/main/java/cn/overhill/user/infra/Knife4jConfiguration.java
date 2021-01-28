@@ -22,14 +22,8 @@ public class Knife4jConfiguration {
                         .termsOfServiceUrl("http://www.xx.com/")
                         .contact("xx@qq.com")
                         .version("1.0")
-                        .build())
-                //分组名称
-                .groupName("2.X版本")
-                .select()
-                //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.github.xiaoymin.knife4j.controller"))
-                .paths(PathSelectors.any())
-                .build();
+                        .build());
+
         return docket;
     }
 }

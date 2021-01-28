@@ -1,5 +1,5 @@
 server:
-  port: 8766
+  port: 9000
 
 spring:
   application:
@@ -20,3 +20,9 @@ spring:
             - Path=/client/** #请求转发
           filters:
             - StripPrefix=1 #切割请求，去除/client/
+        - id: demo-swagger
+          uri: lb://demo-swagger
+          predicates:
+            - Path=/swagger/**
+          filters:
+            - StripPrefix=1
