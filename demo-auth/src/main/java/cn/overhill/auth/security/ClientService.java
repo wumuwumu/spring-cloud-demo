@@ -34,7 +34,7 @@ public class ClientService implements ClientDetailsService {
         baseClientDetails.setAccessTokenValiditySeconds(3600);
         baseClientDetails.setRegisteredRedirectUri(Collections.singleton("http://www.baidu.com"));
         baseClientDetails.setScope(Collections.singleton("all"));
-        baseClientDetails.setAuthorizedGrantTypes(Arrays.asList("authorization_code","password"));
-        return new BaseClientDetails();
+        baseClientDetails.setAuthorizedGrantTypes(Arrays.asList("authorization_code","refresh_token","password"));
+        return baseClientDetails;
     }
 }
