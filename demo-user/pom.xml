@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>cn.overhill</groupId>
-            <artifactId>demo-start-redis</artifactId>
+            <artifactId>demo-starter-redis</artifactId>
             <version>0.0.1</version>
         </dependency>
         <dependency>

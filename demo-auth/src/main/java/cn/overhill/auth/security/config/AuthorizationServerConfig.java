@@ -61,7 +61,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 //        tokenEnhancerChain.setTokenEnhancers(delegates);
 
         endpoints.authenticationManager(authenticationManager)
-                .userDetailsService(userService);
+                .userDetailsService(userService)
+        .tokenEnhancer(new CusTokenConverter());
                 // 配置令牌存储策略
 //        .tokenStore(tokenStore)
 //                .accessTokenConverter(jwtAccessTokenConverter)
