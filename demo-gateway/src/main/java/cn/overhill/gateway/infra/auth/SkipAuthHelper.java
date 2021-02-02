@@ -9,7 +9,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 import java.util.List;
 
-@Component
+//@Component
 public class SkipAuthHelper implements AuthHelper, Ordered {
 
 

@@ -28,6 +28,7 @@
         <module>demo-swagger</module>
         <module>demo-auth</module>
         <module>demo-security</module>
+        <module>demo-auth-resource</module>
     </modules>
 
     <dependencies>

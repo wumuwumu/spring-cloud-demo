@@ -26,3 +26,9 @@ spring:
             - Path=/swagger/**
           filters:
             - StripPrefix=1
+        - id: demo-auth-resource
+          uri: lb://demo-auth-resource
+          predicates:
+            - Path=/resource/**
+          filters:
+            - StripPrefix=1

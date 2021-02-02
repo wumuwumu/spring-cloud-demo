@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
 
-//@Component
+@Component
 public class AuthHelperFilter  implements GlobalFilter, Ordered {
 
 
