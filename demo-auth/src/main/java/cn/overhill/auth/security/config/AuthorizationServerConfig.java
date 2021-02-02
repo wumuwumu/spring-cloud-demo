@@ -53,19 +53,19 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        List<TokenEnhancer> delegates = new ArrayList<>();
-        // 配置jwt内容增强器
-        delegates.add(jwtTokenEnhancer);
-        delegates.add(jwtAccessTokenConverter);
-        tokenEnhancerChain.setTokenEnhancers(delegates);
+//        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+//        List<TokenEnhancer> delegates = new ArrayList<>();
+//        // 配置jwt内容增强器
+//        delegates.add(jwtTokenEnhancer);
+//        delegates.add(jwtAccessTokenConverter);
+//        tokenEnhancerChain.setTokenEnhancers(delegates);
 
         endpoints.authenticationManager(authenticationManager)
-                .userDetailsService(userService)
+                .userDetailsService(userService);
                 // 配置令牌存储策略
-        .tokenStore(tokenStore)
-                .accessTokenConverter(jwtAccessTokenConverter)
-                .tokenEnhancer(tokenEnhancerChain);;
+//        .tokenStore(tokenStore)
+//                .accessTokenConverter(jwtAccessTokenConverter)
+//                .tokenEnhancer(tokenEnhancerChain);;
     }
 
     @Override
