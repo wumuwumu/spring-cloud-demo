@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var source = new EventSource("http://127.0.0.1:9100/sse/subscribe");
+        source.onmessage = function (evt) {
+            console.log(evt.data);
+            document.getElementById('text').innerText = evt.data;
+        }
+
+        <!-- 添加一个开启回调 -->
+        source.onopen = function (event) {
+
+            console.log(event);
+
+        };
+    </script>
+</head>
+<body>
+用户一
+<p id="text"></p>
+
+</body>
+</html>

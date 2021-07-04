@@ -29,7 +29,7 @@ public class JwtAuthHelper implements AuthHelper, Ordered {
     public boolean filter(RequestContext requestContext) {
       HttpHeaders httpHeaders =  requestContext.getExchange().getRequest().getHeaders();
       List<String> header = httpHeaders.get("Authorization");
-      if(header.size()>0){
+      if(header != null && header.size()>0){
           String token = header.get(0).substring(7);
           // 获取用户信息
           // 生成jwt

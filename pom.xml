@@ -29,6 +29,7 @@
         <module>demo-auth</module>
         <module>demo-security</module>
         <module>demo-auth-resource</module>
+        <module>demo-starter-aop</module>
     </modules>
 
     <dependencies>

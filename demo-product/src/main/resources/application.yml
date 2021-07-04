@@ -1,0 +1,17 @@
+server:
+  port: 9300
+
+spring:
+  application:
+    name: demo-product
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+
+feign:
+  sentinel:
+    enabled: true
+  hystrix:
+    enabled: false
+
