@@ -6,6 +6,13 @@ spring:
     name: demo-gateway
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
       routes:
         - id: redirect-blog
           uri: https://wumuwumu.github.io
@@ -24,6 +31,18 @@ spring:
           uri: lb://demo-swagger
           predicates:
             - Path=/swagger/**
+          filters:
+            - StripPrefix=1
+        - id: demo-order
+          uri: lb://demo-order
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
+        - id: demo-product
+          uri: lb://demo-product
+          predicates:
+            - Path=/product/**
           filters:
             - StripPrefix=1
         - id: demo-auth-resource

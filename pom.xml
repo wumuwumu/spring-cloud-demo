@@ -29,6 +29,7 @@
         <module>demo-auth</module>
         <module>demo-security</module>
         <module>demo-auth-resource</module>
+        <module>demo-starter-aop</module>
     </modules>
 
     <dependencies>
@@ -53,6 +54,11 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.4.3</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>

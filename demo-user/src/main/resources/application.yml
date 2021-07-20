@@ -4,3 +4,35 @@ server:
 spring:
   application:
     name: demo-user
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo-user?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  #客户端和服务端在同一个事务组
+  tx-service-group: my_test_tx_group
+  enable-auto-data-source-proxy: true
+  service:
+    vgroup-mapping:
+      my_test_tx_group: default
+  config:
+    type: nacos
+    nacos:
+      namespace: "public"
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      username: "nacos"
+      password: "nacos"
+  #服务注册到nacos
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      namespace: "public"
+      username: "nacos"
+      password: "nacos"
+      cluster: default
